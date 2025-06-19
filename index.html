@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nengli Limited Company - AI-Era Brand & IP World Builder | Nengli.World</title>
+    <title>Nengli.World - AI-Era Brand & IP World Builder</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: var(--dark);
             color: #ffffff;
             overflow-x: hidden;
@@ -32,7 +32,7 @@
                 radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 30%);
         }
         
-        /* Evolution Logo Design */
+        /* Enhanced Logo Design */
         .logo-container {
             position: relative;
             display: flex;
@@ -352,6 +352,7 @@
             overflow: hidden;
             transition: all 0.3s ease;
             border: 1px solid rgba(99, 102, 241, 0.2);
+            height: 100%;
         }
         
         .case-study-card:hover {
@@ -387,6 +388,66 @@
             margin: 0 auto;
         }
         
+        /* Case Grid System */
+        .cases-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .major-case {
+            grid-column: span 2;
+        }
+        
+        .featured-case {
+            grid-column: span 1;
+        }
+        
+        .case-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .tag-flagship { background: linear-gradient(135deg, #8b5cf6, #3b82f6); color: white; }
+        .tag-ai { background: linear-gradient(135deg, #06b6d4, #8b5cf6); color: white; }
+        .tag-cultural { background: linear-gradient(135deg, #f59e0b, #ef4444); color: white; }
+        .tag-fashion { background: linear-gradient(135deg, #ec4899, #f97316); color: white; }
+        .tag-sports { background: linear-gradient(135deg, #10b981, #059669); color: white; }
+        .tag-entertainment { background: linear-gradient(135deg, #6366f1, #8b5cf6); color: white; }
+        .tag-tech { background: linear-gradient(135deg, #0ea5e9, #06b6d4); color: white; }
+        .tag-education { background: linear-gradient(135deg, #84cc16, #65a30d); color: white; }
+        
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+        
+        .stat-value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+        
         @media (max-width: 768px) {
             .hero {
                 min-height: 80vh;
@@ -408,6 +469,14 @@
             }
             
             .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .major-case {
+                grid-column: span 1;
+            }
+            
+            .cases-container {
                 grid-template-columns: 1fr;
             }
             
@@ -464,61 +533,10 @@
             background: linear-gradient(135deg, var(--infinite-purple), var(--infinite-cyan));
             border-radius: 4px;
         }
-        
-        /* New case styles */
-        .case-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .ecosystem-case {
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(99, 102, 241, 0.2);
-            height: 100%;
-        }
-        
-        .ecosystem-case:hover {
-            transform: translateY(-5px);
-            border-color: var(--infinite-purple);
-            box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2);
-        }
-        
-        .case-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            text-align: center;
-        }
-        
-        .case-stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 1rem;
-        }
-        
-        .stat-item {
-            text-align: center;
-            flex: 1;
-        }
-        
-        .stat-value {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 0.25rem;
-        }
-        
-        .stat-label {
-            font-size: 0.75rem;
-            color: var(--infinite-cyan);
-        }
     </style>
 </head>
 <body>
-    <!-- Floating particle background -->
+    <!-- Floating Particle Background -->
     <div class="floating-particles">
         <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
         <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
@@ -539,16 +557,15 @@
                     <span class="logo-symbol">∞</span>
                 </div>
                 <div class="logo-text">
-                    <div class="logo-main">Nengli Limited</div>
                     <div class="logo-sub">NENGLI.WORLD</div>
                 </div>
             </a>
             
-            <!-- Desktop navigation -->
+            <!-- Desktop Navigation -->
             <div class="hidden md:flex space-x-8">
                 <a href="#evolution" class="hover:text-cyan-400 transition font-medium">Strategic Evolution</a>
                 <a href="#products" class="hover:text-cyan-400 transition font-medium">Core Products</a>
-                <a href="#cases" class="hover:text-cyan-400 transition font-medium">Success Cases</a>
+                <a href="#cases" class="hover:text-cyan-400 transition font-medium">Project Cases</a>
                 <a href="#pricing" class="hover:text-cyan-400 transition font-medium">Pricing System</a>
                 <a href="#vision" class="hover:text-cyan-400 transition font-medium">Future Vision</a>
                 <a href="#contact" class="hover:text-cyan-400 transition font-medium">Contact Us</a>
@@ -560,18 +577,18 @@
                 </a>
                 <a href="#pricing" class="btn-primary px-6 py-2 rounded-full text-sm">Start Building Worlds</a>
                 
-                <!-- Mobile menu button -->
+                <!-- Mobile Menu Button -->
                 <button class="mobile-menu-button md:hidden" id="menuToggle">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
         
-        <!-- Mobile menu -->
+        <!-- Mobile Menu -->
         <div class="mobile-menu md:hidden" id="mobileMenu">
             <a href="#evolution" class="hover:text-cyan-400 transition block py-3">Strategic Evolution</a>
             <a href="#products" class="hover:text-cyan-400 transition block py-3">Core Products</a>
-            <a href="#cases" class="hover:text-cyan-400 transition block py-3">Success Cases</a>
+            <a href="#cases" class="hover:text-cyan-400 transition block py-3">Project Cases</a>
             <a href="#pricing" class="hover:text-cyan-400 transition block py-3">Pricing System</a>
             <a href="#vision" class="hover:text-cyan-400 transition block py-3">Future Vision</a>
             <a href="#contact" class="hover:text-cyan-400 transition block py-3">Contact Us</a>
@@ -590,7 +607,7 @@
                         AI-Era Brand & IP<br>World Builder
                     </h1>
                     <p class="text-xl md:text-3xl text-gray-300 mb-4">
-                        Redefining Brand-User Relationships: From "Reception" to "Experience + Co-Creation"
+                        Redefining Brand-User Relationships: From "Reception" to "Experience + Co-creation"
                     </p>
                     <p class="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto">
                         Building continuously operating interactive experience world systems for brands and IPs, unleashing infinite creative possibilities and commercial value through AI-native technology
@@ -604,24 +621,24 @@
                             <i class="fas fa-globe"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">Brand World Creation</h3>
-                        <p class="text-gray-300">Building exclusive interactive universes<br>for deep immersion in brand values</p>
-                        <div class="text-lg font-bold text-cyan-400 mt-3">From $450K</div>
+                        <p class="text-gray-300">Build exclusive interactive experience universes<br>for deep brand value immersion</p>
+                        <div class="text-lg font-bold text-cyan-400 mt-3">Starting from $3M</div>
                     </div>
                     <div class="evolution-card p-8 text-center">
                         <div class="text-5xl mb-4 text-purple-400">
                             <i class="fas fa-magic"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">IP World Creation</h3>
-                        <p class="text-gray-300">Building fan co-creation ecosystems<br>for sustained IP value growth</p>
-                        <div class="text-lg font-bold text-purple-400 mt-3">From $75K</div>
+                        <p class="text-gray-300">Build fan co-creation ecosystems for IPs<br>achieving sustainable IP value growth</p>
+                        <div class="text-lg font-bold text-purple-400 mt-3">Starting from $1M</div>
                     </div>
                     <div class="evolution-card p-8 text-center">
                         <div class="text-5xl mb-4 text-orange-400">
                             <i class="fas fa-robot"></i>
                         </div>
                         <h3 class="text-xl font-bold mb-3">AI Companion Creation</h3>
-                        <p class="text-gray-300">Custom AI companions with unique personalities<br>for deep emotional connections</p>
-                        <div class="text-lg font-bold text-orange-400 mt-3">From $150K</div>
+                        <p class="text-gray-300">Customize AI companions with unique personalities<br>for deep emotional connections</p>
+                        <div class="text-lg font-bold text-orange-400 mt-3">Starting from $1M</div>
                     </div>
                 </div>
 
@@ -658,8 +675,591 @@
                         <i class="fas fa-globe mr-2"></i>Build Brand Worlds
                     </a>
                     <a href="#cases" class="bg-transparent border-2 border-cyan-400 px-8 py-4 rounded-full text-lg font-bold hover:bg-cyan-400 hover:text-black transition">
-                        <i class="fas fa-star mr-2"></i>Success Cases
+                        <i class="fas fa-star mr-2"></i>Project Cases
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Cases -->
+    <section id="cases" class="py-20 bg-black bg-opacity-30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Project Cases</h2>
+                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
+                    Real project validation, cross-industry success cases demonstrating the infinite potential of AI-native world building
+                </p>
+            </div>
+
+            <!-- Flagship Cases -->
+            <div class="cases-container mb-16">
+                <!-- Hong Kong AI International Film Festival - Main Case -->
+                <div class="case-study-card major-case">
+                    <div class="case-visual bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <i class="fas fa-film text-6xl mb-4"></i>
+                            <h4 class="text-3xl font-bold">Hong Kong AI International Film Festival</h4>
+                            <p class="text-xl opacity-90">World's First AI-Native Content Theme International Film Festival</p>
+                        </div>
+                        <div class="case-overlay">
+                            <div class="flex flex-wrap items-center mb-4">
+                                <span class="case-tag tag-flagship">Flagship Project</span>
+                                <span class="case-tag tag-ai">AI Ecosystem</span>
+                                <span class="case-tag tag-cultural">Cultural Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold mb-4">World's First AI-Native Film Festival Ecosystem</h3>
+                        <p class="text-gray-300 mb-6 text-lg">
+                            Built a complete AI creator ecosystem system, providing full-chain support from technical tools, creative guidance to exhibition platforms, showcasing forward-thinking layout in the AI+content field. Established a complete industry ecosystem including AI Film Academy, AI Film Market, 404world streaming platform, BeingOS digital talent agency, and global submission center.
+                        </p>
+                        <div class="case-stats mb-6">
+                            <div class="stat-item">
+                                <div class="stat-value text-purple-400">1000+</div>
+                                <div class="stat-label">AI Creators Participated</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value text-purple-400">50+</div>
+                                <div class="stat-label">Countries & Regions</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value text-purple-400">5000+</div>
+                                <div class="stat-label">Submitted Works</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value text-purple-400">1M+</div>
+                                <div class="stat-label">Platform Users</div>
+                            </div>
+                        </div>
+                        <button class="btn-infinite w-full py-3 rounded-lg font-bold">View Detailed Case</button>
+                    </div>
+                </div>
+
+                <!-- Knowledge is Power IP Digital Upgrade -->
+                <div class="case-study-card featured-case">
+                    <div class="case-visual bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
+                        <div class="text-center text-white p-6">
+                            <i class="fas fa-book-open text-4xl mb-3"></i>
+                            <h4 class="text-xl font-bold">Knowledge is Power</h4>
+                            <p class="text-sm opacity-90">IP Digital Transformation Benchmark</p>
+                        </div>
+                        <div class="case-overlay">
+                            <div class="flex flex-wrap items-center mb-2">
+                                <span class="case-tag tag-education">Knowledge IP</span>
+                                <span class="case-tag tag-ai">Digital Transformation</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3">Traditional Popular Science Magazine Brand Digital Transformation</h3>
+                        <p class="text-gray-300 mb-4 text-sm">
+                            Benchmark project for traditional popular science magazine brand digital transformation. Through AI technology, helped traditional IP achieve youthful upgrade, successfully transforming into digital knowledge IP.
+                        </p>
+                        <div class="case-stats mb-4">
+                            <div class="stat-item">
+                                <div class="stat-value text-orange-400">5M+</div>
+                                <div class="stat-label">New Fans</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value text-orange-400">85%</div>
+                                <div class="stat-label">Youth Index Increase</div>
+                            </div>
+                        </div>
+                        <button class="btn-primary w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core IP Works Cases -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8 text-center gradient-text">Core IP Works Showcase</h3>
+                <div class="cases-container">
+                    <!-- Galaxy Research Institute -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-rocket text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">Galaxy Research Institute</h4>
+                                <p class="text-sm opacity-90">Sci-Fi Content IP</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-entertainment">Sci-Fi IP</span>
+                                    <span class="case-tag tag-ai">AI Generated</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Vertical Sci-Fi Content IP</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                Original sci-fi content IP focused on future technology and space exploration, building complete sci-fi worldviews through AI technology.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-blue-400">2M+</div>
+                                    <div class="stat-label">Fan Following</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-blue-400">50+</div>
+                                    <div class="stat-label">Original Works</div>
+                                </div>
+                            </div>
+                            <button class="btn-infinite w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+
+                    <!-- Brain Wandering Guide -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-brain text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">Brain Wandering Guide</h4>
+                                <p class="text-sm opacity-90">Psychology Popular Science IP</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-education">Psychology Science</span>
+                                    <span class="case-tag tag-cultural">Knowledge Dissemination</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Psychology Popular Science Knowledge IP</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                Spreading psychology knowledge in a relaxed and interesting way, helping users understand brain mechanisms and mental health.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-pink-400">1.5M+</div>
+                                    <div class="stat-label">Learning Users</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-pink-400">300+</div>
+                                    <div class="stat-label">Science Content</div>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Large Event Cases -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8 text-center gradient-text">Large Events & Competitions</h3>
+                <div class="cases-container">
+                    <!-- Future World Patch Conference -->
+                    <div class="case-study-card major-case">
+                        <div class="case-visual bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-code text-6xl mb-4"></i>
+                                <h4 class="text-3xl font-bold">Future World Patch Conference</h4>
+                                <p class="text-xl opacity-90">Global Technology Innovation Conference</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-4">
+                                    <span class="case-tag tag-tech">Tech Conference</span>
+                                    <span class="case-tag tag-ai">AI Technology</span>
+                                    <span class="case-tag tag-flagship">International Event</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-3xl font-bold mb-4">Global Technology Innovation & AI Development Conference</h3>
+                            <p class="text-gray-300 mb-6 text-lg">
+                                Annual gathering of global top technology innovators, AI researchers, and futurists, exploring how to "patch" the world through technological innovation to solve major challenges facing humanity.
+                            </p>
+                            <div class="case-stats mb-6">
+                                <div class="stat-item">
+                                    <div class="stat-value text-cyan-400">5000+</div>
+                                    <div class="stat-label">Attendees</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-cyan-400">200+</div>
+                                    <div class="stat-label">Speaker Guests</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-cyan-400">50+</div>
+                                    <div class="stat-label">Participating Countries</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-cyan-400">100+</div>
+                                    <div class="stat-label">Media Reports</div>
+                                </div>
+                            </div>
+                            <button class="btn-infinite w-full py-3 rounded-lg font-bold">View Detailed Case</button>
+                        </div>
+                    </div>
+
+                    <!-- China Mascot Competition -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-red-500 to-yellow-500 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-trophy text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">China Mascot Competition</h4>
+                                <p class="text-sm opacity-90">National Creative Design Competition</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-cultural">Cultural Creativity</span>
+                                    <span class="case-tag tag-entertainment">Design Competition</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">National Cultural Creative Design Competition</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                National competition platform promoting excellent traditional Chinese culture and discovering and cultivating creative design talent.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-red-400">10,000+</div>
+                                    <div class="stat-label">Entries</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-red-400">500+</div>
+                                    <div class="stat-label">Award Winners</div>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+
+                    <!-- World Mascot Convention Carnival -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-globe text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">World Mascot Convention Carnival</h4>
+                                <p class="text-sm opacity-90">International Cultural Exchange</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-cultural">International Culture</span>
+                                    <span class="case-tag tag-entertainment">Carnival</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">International Cultural Exchange Grand Event</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                International exchange activity bringing together mascot cultures from around the world, promoting understanding and integration between different cultures.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-purple-400">100+</div>
+                                    <div class="stat-label">Participating Countries</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-purple-400">500K+</div>
+                                    <div class="stat-label">Visitor Count</div>
+                                </div>
+                            </div>
+                            <button class="btn-infinite w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cultural & Sports Cases -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8 text-center gradient-text">Cultural & Sports Projects</h3>
+                <div class="cases-container">
+                    <!-- Dunhuang Museum Digital Cultural Creation -->
+                    <div class="case-study-card major-case">
+                        <div class="case-visual bg-gradient-to-br from-yellow-600 to-orange-600 flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-landmark text-6xl mb-4"></i>
+                                <h4 class="text-3xl font-bold">Dunhuang Museum Digital Cultural Creation</h4>
+                                <p class="text-xl opacity-90">Traditional Culture Digital Transformation</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-4">
+                                    <span class="case-tag tag-cultural">Traditional Culture</span>
+                                    <span class="case-tag tag-tech">Digital Cultural Creation</span>
+                                    <span class="case-tag tag-ai">AI Technology</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-3xl font-bold mb-4">Mogao Caves Auspicious Beast Murals Complete Revitalization</h3>
+                            <p class="text-gray-300 mb-6 text-lg">
+                                Based on Mogao Caves auspicious beast murals, complete image revitalization assisted by new algorithmic technology, creating unique technology-culture digital assets. Perfectly integrating thousand-year cultural heritage with modern technology, injecting new vitality into traditional culture.
+                            </p>
+                            <div class="case-stats mb-6">
+                                <div class="stat-item">
+                                    <div class="stat-value text-yellow-400">100+</div>
+                                    <div class="stat-label">Beast Images</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-yellow-400">500K+</div>
+                                    <div class="stat-label">Digital Collectibles</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-yellow-400">10M+</div>
+                                    <div class="stat-label">Media Coverage</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-yellow-400">95%</div>
+                                    <div class="stat-label">User Satisfaction</div>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-3 rounded-lg font-bold">View Detailed Case</button>
+                        </div>
+                    </div>
+
+                    <!-- Pixel Post Office Series -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-blue-500 to-green-500 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-mail-bulk text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">Pixel Post Office Series</h4>
+                                <p class="text-sm opacity-90">Metaverse Digital Post Office</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-tech">Metaverse</span>
+                                    <span class="case-tag tag-cultural">Pixel Art</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">China Post Metaverse Exploration</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                New metaverse digital post office created with China Post as prototype using voxel style, marking China Post's entry into the metaverse world.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-blue-400">100K+</div>
+                                    <div class="stat-label">Digital Assets</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-blue-400">5M+</div>
+                                    <div class="stat-label">User Participation</div>
+                                </div>
+                            </div>
+                            <button class="btn-infinite w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+
+                    <!-- China CUBA League -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-basketball-ball text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">China CUBA League</h4>
+                                <p class="text-sm opacity-90">University Basketball League</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-sports">Sports Events</span>
+                                    <span class="case-tag tag-entertainment">Youth Vitality</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Top University Basketball Competition</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                Digital upgrade project for China University Basketball League, injecting technological vitality into youth sports.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-orange-400">500+</div>
+                                    <div class="stat-label">Participating Universities</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-orange-400">10M+</div>
+                                    <div class="stat-label">Viewer Count</div>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- International Exhibition Cases -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8 text-center gradient-text">International Exhibitions & Cultural Projects</h3>
+                <div class="cases-container">
+                    <!-- CIIE China International Digital Cultural Creation Exhibition -->
+                    <div class="case-study-card major-case">
+                        <div class="case-visual bg-gradient-to-br from-green-600 to-teal-600 flex items-center justify-center">
+                            <div class="text-center text-white p-8">
+                                <i class="fas fa-globe-asia text-6xl mb-4"></i>
+                                <h4 class="text-3xl font-bold">CIIE China International Digital Cultural Creation Exhibition</h4>
+                                <p class="text-xl opacity-90">International Import Expo Digital Cultural Creation Section</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-4">
+                                    <span class="case-tag tag-flagship">International Exhibition</span>
+                                    <span class="case-tag tag-cultural">Digital Cultural Creation</span>
+                                    <span class="case-tag tag-tech">NFT Project</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-8">
+                            <h3 class="text-3xl font-bold mb-4">First Global-Level Encrypted National Treasure Mascot</h3>
+                            <p class="text-gray-300 mb-6 text-lg">
+                                Conducted series of themed activities around foreign NFT projects, trendy art, festivals and competitions. "Crypto Panda" is the first global-level encrypted national treasure mascot series digital asset, and the first new exploration of data projects at the CIIE with China Import Expo Bureau, achieving nearly a hundred mainstream media tracking reports that year.
+                            </p>
+                            <div class="case-stats mb-6">
+                                <div class="stat-item">
+                                    <div class="stat-value text-green-400">100+</div>
+                                    <div class="stat-label">Media Reports</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-green-400">500K+</div>
+                                    <div class="stat-label">Digital Assets</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-green-400">200+</div>
+                                    <div class="stat-label">International Brands</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-green-400">10M+</div>
+                                    <div class="stat-label">Global Attention</div>
+                                </div>
+                            </div>
+                            <button class="btn-infinite w-full py-3 rounded-lg font-bold">View Detailed Case</button>
+                        </div>
+                    </div>
+
+                    <!-- Theater Play "A Dream Like a Dream" -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-theater-masks text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">Theater Play "A Dream Like a Dream"</h4>
+                                <p class="text-sm opacity-90">Classic Theater Digitalization</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-entertainment">Theater Art</span>
+                                    <span class="case-tag tag-cultural">Cultural Heritage</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Digital Exploration of Classic Theater</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                Combining classic theater with digital technology, injecting new forms of expression and communication channels into traditional dramatic arts.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-purple-400">500K+</div>
+                                    <div class="stat-label">Audience Coverage</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-purple-400">100+</div>
+                                    <div class="stat-label">Performance Shows</div>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commercial Brand Cases -->
+            <div class="mb-16">
+                <h3 class="text-3xl font-bold mb-8 text-center gradient-text">Commercial Brand Collaboration Cases</h3>
+                <div class="cases-container">
+                    <!-- FENGLL Fashion Brand -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-tshirt text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">FENGLL Fashion Brand</h4>
+                                <p class="text-sm opacity-90">Virtual Brand Spokesperson</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-fashion">Fashion Brand</span>
+                                    <span class="case-tag tag-ai">Virtual Endorsement</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">Virtual Brand Spokesperson "Miss Feng"</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                Virtual spokesperson IP marketing case created for fashion brand, showcasing innovative applications of AI technology in brand marketing.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-pink-400">280%</div>
+                                    <div class="stat-label">Sales Growth</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-pink-400">1:8</div>
+                                    <div class="stat-label">Marketing ROI</div>
+                                </div>
+                            </div>
+                            <button class="btn-infinite w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+
+                    <!-- YueYue Vitality Plan -->
+                    <div class="case-study-card featured-case">
+                        <div class="case-visual bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-shopping-cart text-4xl mb-3"></i>
+                                <h4 class="text-xl font-bold">YueYue Vitality Plan</h4>
+                                <p class="text-sm opacity-90">E-commerce Platform Upgrade</p>
+                            </div>
+                            <div class="case-overlay">
+                                <div class="flex flex-wrap items-center mb-2">
+                                    <span class="case-tag tag-tech">E-commerce Platform</span>
+                                    <span class="case-tag tag-ai">AI Marketing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3">E-commerce Platform AI Marketing Upgrade</h3>
+                            <p class="text-gray-300 mb-4 text-sm">
+                                Comprehensive solution optimizing e-commerce platform user experience through AI technology, improving conversion rates and user stickiness.
+                            </p>
+                            <div class="case-stats mb-4">
+                                <div class="stat-item">
+                                    <div class="stat-value text-blue-400">150%</div>
+                                    <div class="stat-label">DAU Growth</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value text-blue-400">300%</div>
+                                    <div class="stat-label">Transaction Growth</div>
+                                </div>
+                            </div>
+                            <button class="btn-primary w-full py-2 rounded-lg font-bold text-sm">View Detailed Case</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROI Calculation Display -->
+            <div class="card p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-6 text-center">Return on Investment Comparison Analysis</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="text-center">
+                        <h4 class="text-lg font-bold mb-4 text-gray-400">Traditional Marketing Campaign ROI</h4>
+                        <div class="space-y-3">
+                            <div class="text-3xl font-bold text-gray-400">50%-200%</div>
+                            <div class="text-sm text-gray-500">Typical cycle: 3-6 months</div>
+                            <div class="text-sm text-gray-500">Short-term exposure, limited data value</div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h4 class="text-lg font-bold mb-4 text-cyan-400">Interactive World System ROI</h4>
+                        <div class="space-y-3">
+                            <div class="text-3xl font-bold text-cyan-400">300%-1000%</div>
+                            <div class="text-sm text-cyan-400">Typical cycle: 3-5 years</div>
+                            <div class="text-sm text-cyan-400">Continuous value appreciation, digital asset value</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 p-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-center">
+                    <div class="font-bold">Average LTV Increase: 150%-300% | User Engagement Time: 10-50x higher than traditional content</div>
                 </div>
             </div>
         </div>
@@ -671,7 +1271,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Strategic Evolution: From Limited to Infinite</h2>
                 <p class="text-xl text-gray-300 max-w-4xl mx-auto">
-                    In the era where AI reshapes everything, we choose to lead change, evolving from traditional "limited capabilities" model to "infinite possibilities" AI-native enterprise
+                    In an era where AI reshapes everything, we choose to lead change, evolving from traditional "limited capabilities" model to an AI-native enterprise of "infinite possibilities"
                 </p>
             </div>
 
@@ -688,6 +1288,10 @@
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <i class="fas fa-times-circle text-red-400 mr-3"></i>
+                            <span class="text-gray-300">Passive user reception, lack of deep connection</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-times-circle text-red-400 mr-3"></i>
                             <span class="text-gray-300">Limited human-driven linear scaling</span>
                         </div>
                         <div class="flex items-center">
@@ -697,10 +1301,6 @@
                         <div class="flex items-center">
                             <i class="fas fa-times-circle text-red-400 mr-3"></i>
                             <span class="text-gray-300">Standardized services, difficult differentiation</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-times-circle text-red-400 mr-3"></i>
-                            <span class="text-gray-300">Passive user reception, lack of deep connection</span>
                         </div>
                     </div>
                 </div>
@@ -716,6 +1316,10 @@
                     <div class="space-y-4">
                         <div class="flex items-center">
                             <i class="fas fa-check-circle text-cyan-400 mr-3"></i>
+                            <span class="text-gray-300">Active user participation, deep emotional co-creation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-cyan-400 mr-3"></i>
                             <span class="text-gray-300">Generative system-driven exponential growth</span>
                         </div>
                         <div class="flex items-center">
@@ -725,10 +1329,6 @@
                         <div class="flex items-center">
                             <i class="fas fa-check-circle text-cyan-400 mr-3"></i>
                             <span class="text-gray-300">Infinite personalization, unique experiences</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-check-circle text-cyan-400 mr-3"></i>
-                            <span class="text-gray-300">Active user participation, deep emotional co-creation</span>
                         </div>
                     </div>
                 </div>
@@ -747,7 +1347,7 @@
                 <div class="evolution-step">
                     <div class="evolution-content evolution-right">
                         <h4 class="text-xl font-bold mb-3 text-blue-400">Digital Transformation Period</h4>
-                        <p class="text-gray-300 mb-3">Multi-platform content strategies, data-driven optimization, early AI tool-assisted creation</p>
+                        <p class="text-gray-300 mb-3">Multi-platform content strategy, data-driven optimization, beginning AI tool-assisted creation</p>
                         <div class="text-sm text-gray-400">2020-2023</div>
                     </div>
                 </div>
@@ -755,7 +1355,7 @@
                 <div class="evolution-step">
                     <div class="evolution-content evolution-left">
                         <h4 class="text-xl font-bold mb-3 text-purple-400">AI-Native Transformation Period</h4>
-                        <p class="text-gray-300 mb-3">Platform-wide AI implementation, transition from content creation to experience construction</p>
+                        <p class="text-gray-300 mb-3">Platform-wide AI adoption, transformation from content creation to experience construction</p>
                         <div class="text-sm text-gray-400">2023-2025</div>
                     </div>
                 </div>
@@ -763,7 +1363,7 @@
                 <div class="evolution-step">
                     <div class="evolution-content evolution-right">
                         <h4 class="text-xl font-bold mb-3 text-cyan-400">World Builder Era</h4>
-                        <p class="text-gray-300 mb-3">Becoming AI-era brand & IP world builders, creating interactive experience universes</p>
+                        <p class="text-gray-300 mb-3">Becoming AI-era brand and IP world builders, creating interactive experience universes</p>
                         <div class="text-sm text-gray-400">2025-Present</div>
                     </div>
                 </div>
@@ -777,7 +1377,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Core Product System</h2>
                 <p class="text-xl text-gray-300 max-w-4xl mx-auto">
-                    Three major delivery-type product solutions, centered around "building digital life worlds for brands and IPs"
+                    Three major deliverable product solutions centered around the core concept of "building digital life worlds for brands and IPs"
                 </p>
             </div>
 
@@ -786,16 +1386,16 @@
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full text-sm font-bold mb-6">
-                            Brand World Creation System | From $450K
+                            Brand World Creation System | Starting from $3M
                         </div>
                         <h3 class="text-3xl font-bold mb-6">Building Exclusive Interactive Universes for Brands</h3>
                         <p class="text-lg text-gray-300 mb-8">
-                            Construct a dedicated, persistently operating, high-fidelity interactive experience world that allows users to immersively experience brand values, participate in brand story creation, and establish deep emotional connections.
+                            Construct a dedicated, persistently operating, high-fidelity interactive experience world that allows users to immersively experience brand values, participate in brand storytelling, and build deep emotional connections.
                         </p>
                         
                         <div class="space-y-6 mb-8">
                             <div>
-                                <h4 class="font-bold text-lg mb-3 text-orange-400">Core Function Modules</h4>
+                                <h4 class="font-bold text-lg mb-3 text-orange-400">Core Functional Modules</h4>
                                 <div class="grid md:grid-cols-2 gap-4">
                                     <div class="flex items-start">
                                         <i class="fas fa-cube text-orange-400 mr-3 mt-1"></i>
@@ -833,11 +1433,11 @@
                                 <div class="space-y-3">
                                     <div class="bg-black bg-opacity-30 p-4 rounded-lg">
                                         <div class="font-semibold mb-1">Luxury Automotive Brand World</div>
-                                        <div class="text-sm text-gray-400">Virtual manufacturing workshop where users participate in designing custom vehicles, guided by AI master craftsmen</div>
+                                        <div class="text-sm text-gray-400">Virtual manufacturing workshop where users participate in designing customized vehicles, guided by AI master craftsmen</div>
                                     </div>
                                     <div class="bg-black bg-opacity-30 p-4 rounded-lg">
                                         <div class="font-semibold mb-1">High-End Fashion Brand World</div>
-                                        <div class="text-sm text-gray-400">Fashion creative incubation space where users co-create with AI designers and showcase in virtual fashion shows</div>
+                                        <div class="text-sm text-gray-400">Fashion creative incubation space where users co-create with AI designers, featuring virtual fashion shows and displays</div>
                                     </div>
                                 </div>
                             </div>
@@ -878,7 +1478,7 @@
                             </div>
                         </div>
                         <div class="mt-6 p-4 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg text-center">
-                            <div class="text-2xl font-bold">From $450K</div>
+                            <div class="text-2xl font-bold">Starting from $3M</div>
                             <div class="text-sm opacity-90">6-12 months delivery cycle</div>
                         </div>
                     </div>
@@ -900,15 +1500,15 @@
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-heart text-purple-400 mr-3"></i>
-                                <span>Anime IPs (Famous animation, manga works)</span>
+                                <span>Anime IPs (famous animation, manga works)</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-gamepad text-purple-400 mr-3"></i>
-                                <span>Gaming IPs (Games with rich worldviews)</span>
+                                <span>Gaming IPs (games with rich worldviews)</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-book text-purple-400 mr-3"></i>
-                                <span>Literary IPs (Classic novels, web literature)</span>
+                                <span>Literary IPs (classic novels, web literature)</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-microphone text-purple-400 mr-3"></i>
@@ -916,29 +1516,29 @@
                             </div>
                         </div>
                         <div class="mt-6 p-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg text-center">
-                            <div class="text-2xl font-bold">From $75K</div>
+                            <div class="text-2xl font-bold">Starting from $1M</div>
                             <div class="text-sm opacity-90">3-6 months delivery cycle</div>
                         </div>
                     </div>
                     
                     <div class="order-1 lg:order-2">
                         <div class="inline-block px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full text-sm font-bold mb-6">
-                            IP World Creation System | From $75K
+                            IP World Creation System | Starting from $1M
                         </div>
-                        <h3 class="text-3xl font-bold mb-6">Building Fan Co-Creation Ecosystems for IPs</h3>
+                        <h3 class="text-3xl font-bold mb-6">Building Fan Co-creation Ecosystems for IPs</h3>
                         <p class="text-lg text-gray-300 mb-8">
                             Build officially certified interactive world systems for mature IPs, allowing fans to deeply immerse in IP universes, interact with beloved characters, and participate in IP world co-creation development.
                         </p>
                         
                         <div class="space-y-6 mb-8">
                             <div>
-                                <h4 class="font-bold text-lg mb-3 text-purple-400">Core Function Features</h4>
+                                <h4 class="font-bold text-lg mb-3 text-purple-400">Core Functional Features</h4>
                                 <div class="space-y-4">
                                     <div class="flex items-start">
                                         <i class="fas fa-map text-purple-400 mr-3 mt-1"></i>
                                         <div>
                                             <div class="font-semibold">Canon World Construction</div>
-                                            <div class="text-sm text-gray-400">Complete reproduction of IP original worldview, high-fidelity restoration of key scenes</div>
+                                            <div class="text-sm text-gray-400">Complete worldview recreation based on original IP, high-fidelity restoration of key scenes</div>
                                         </div>
                                     </div>
                                     <div class="flex items-start">
@@ -951,7 +1551,7 @@
                                     <div class="flex items-start">
                                         <i class="fas fa-pencil-alt text-purple-400 mr-3 mt-1"></i>
                                         <div>
-                                            <div class="font-semibold">Fan Co-Creation Platform</div>
+                                            <div class="font-semibold">Fan Co-creation Platform</div>
                                             <div class="text-sm text-gray-400">User-generated content creation tools with official IP certification for excellent works</div>
                                         </div>
                                     </div>
@@ -969,11 +1569,11 @@
                 <div class="grid lg:grid-cols-2 gap-12 items-center">
                     <div>
                         <div class="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-sm font-bold mb-6">
-                            AI Companion Creation System | From $150K
+                            AI Companion Creation System | Starting from $1M
                         </div>
-                        <h3 class="text-3xl font-bold mb-6">Custom AI Companions with Unique Personalities</h3>
+                        <h3 class="text-3xl font-bold mb-6">Customizing AI Companions with Unique Personalities</h3>
                         <p class="text-lg text-gray-300 mb-8">
-                            Create customized AI companions with unique personalities for brands and IPs, serving as primary interaction objects, emotional connection bridges, and brand value delivery vehicles for users in the world.
+                            Custom-designed AI companions with unique personalities for brands and IPs, serving as primary interactive objects, emotional connection bridges, and brand value delivery vehicles for users in the world.
                         </p>
                         
                         <div class="space-y-6 mb-8">
@@ -988,7 +1588,7 @@
                                     <div class="bg-black bg-opacity-30 p-4 rounded-lg">
                                         <div class="font-semibold text-cyan-400 mb-1">Creator Type</div>
                                         <div class="text-xs text-gray-400 mb-2">Design software, DIY brands, art supplies</div>
-                                        <div class="text-sm">Imaginative, encouraging innovation, sharing</div>
+                                        <div class="text-sm">Imaginative, innovation-encouraging, sharing-oriented</div>
                                     </div>
                                     <div class="bg-black bg-opacity-30 p-4 rounded-lg">
                                         <div class="font-semibold text-cyan-400 mb-1">Explorer Type</div>
@@ -1020,9 +1620,9 @@
                             <div class="border border-cyan-400 p-4 rounded-lg">
                                 <div class="font-semibold text-cyan-400 mb-2">Level 3 - Deep Companion Type</div>
                                 <div class="text-sm text-gray-300 space-y-1">
-                                    <div>• Complete original personality construction</div>
+                                    <div>• Fully original personality construction</div>
                                     <div>• Neural network-level emotional intelligence</div>
-                                    <div>• Long-term relationship learning ability</div>
+                                    <div>• Long-term relationship learning capability</div>
                                     <div>• Cross-platform consistent experience</div>
                                 </div>
                             </div>
@@ -1043,302 +1643,10 @@
                             </div>
                         </div>
                         <div class="mt-6 p-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-center">
-                            <div class="text-2xl font-bold">From $150K</div>
+                            <div class="text-2xl font-bold">Starting from $1M</div>
                             <div class="text-sm opacity-90">Pricing based on level</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Success Cases -->
-    <section id="cases" class="py-20 bg-black bg-opacity-30">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Success Case Studies</h2>
-                <p class="text-xl text-gray-300 max-w-4xl mx-auto">
-                    Real project validation, cross-industry success cases demonstrating the infinite potential of AI-native world building
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-12 mb-16">
-                <!-- Hong Kong AI International Film Festival Case -->
-                <div class="case-study-card">
-                    <div class="case-visual bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
-                        <div class="text-center text-white p-8">
-                            <i class="fas fa-film text-6xl mb-4"></i>
-                            <h4 class="text-2xl font-bold">Hong Kong AI International Film Festival</h4>
-                            <p class="text-lg opacity-90">World's first AI-native content themed international film festival</p>
-                        </div>
-                        <div class="case-overlay">
-                            <div class="flex items-center mb-2">
-                                <span class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm font-bold mr-3">Flagship Project</span>
-                                <span class="bg-pink-500 text-white px-3 py-1 rounded-full text-sm">Ecosystem Building</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">World's First AI-Native Film Festival Ecosystem</h3>
-                        <div class="space-y-4 mb-6">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-400">Project Scale</span>
-                                <span class="text-white font-semibold">International Film Festival</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-400">Ecosystem Value</span>
-                                <span class="text-white font-semibold">Complete AI Creator Ecosystem</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 mb-6">
-                            Built a complete AI creator ecosystem with full-chain support from technical tools and creative guidance to showcase platforms, demonstrating forward-thinking layout in AI+content field.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="text-center p-4 bg-black bg-opacity-30 rounded-lg">
-                                <div class="text-2xl font-bold text-purple-400">1000+</div>
-                                <div class="text-sm text-gray-400">AI Creators Participated</div>
-                            </div>
-                            <div class="text-center p-4 bg-black bg-opacity-30 rounded-lg">
-                                <div class="text-2xl font-bold text-purple-400">50+</div>
-                                <div class="text-sm text-gray-400">Countries & Regions</div>
-                            </div>
-                        </div>
-                        <button class="btn-infinite w-full py-3 rounded-lg font-bold">View Detailed Case</button>
-                    </div>
-                </div>
-
-                <!-- Knowledge is Power IP Digital Upgrade -->
-                <div class="case-study-card">
-                    <div class="case-visual" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')">
-                        <div class="w-full h-full bg-cover bg-center"></div>
-                        <div class="case-overlay">
-                            <div class="flex items-center mb-2">
-                                <span class="bg-orange-400 text-black px-3 py-1 rounded-full text-sm font-bold mr-3">Knowledge IP</span>
-                                <span class="bg-blue-400 text-white px-3 py-1 rounded-full text-sm">Digital Transformation</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold mb-4">"Knowledge is Power" IP Digital Upgrade</h3>
-                        <div class="space-y-4 mb-6">
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-400">Project Duration</span>
-                                <span class="text-white font-semibold">6 months</span>
-                            </div>
-                            <div class="flex justify-between items-center">
-                                <span class="text-gray-400">Services Used</span>
-                                <span class="text-white font-semibold">IP World Creation + AI Companion</span>
-                            </div>
-                        </div>
-                        <p class="text-gray-300 mb-6">
-                            Flagship project for traditional science magazine brand digital transformation. Through AI technology, helped traditional IP achieve youth-oriented upgrade, successfully transforming into digital knowledge IP.
-                        </p>
-                        <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="text-center p-4 bg-black bg-opacity-30 rounded-lg">
-                                <div class="text-2xl font-bold text-orange-400">5M+</div>
-                                <div class="text-sm text-gray-400">New Fans</div>
-                            </div>
-                            <div class="text-center p-4 bg-black bg-opacity-30 rounded-lg">
-                                <div class="text-2xl font-bold text-orange-400">85%</div>
-                                <div class="text-sm text-gray-400">Youth Index Increase</div>
-                            </div>
-                        </div>
-                        <button class="btn-primary w-full py-3 rounded-lg font-bold">View Detailed Case</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- New AI Ecosystem Cases -->
-            <div class="mb-16">
-                <h3 class="text-3xl font-bold mb-8 text-center gradient-text">AI Ecosystem Success Cases</h3>
-                <div class="case-grid">
-                    <!-- AI Film Academy -->
-                    <div class="ecosystem-case">
-                        <div class="case-icon text-blue-400">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3 text-center">AI Film Academy</h4>
-                        <p class="text-gray-300 mb-4 text-center">
-                            Cultivating creative talent for the AI-native era, establishing industry talent standards. Providing degree education, professional certification, corporate training, and online courses.
-                        </p>
-                        <div class="case-stats">
-                            <div class="stat-item">
-                                <div class="stat-value text-blue-400">10,000+</div>
-                                <div class="stat-label">Talents Trained</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value text-blue-400">200+</div>
-                                <div class="stat-label">Courses</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- AI Film Market -->
-                    <div class="ecosystem-case">
-                        <div class="case-icon text-purple-400">
-                            <i class="fas fa-store"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3 text-center">AI Film Market</h4>
-                        <p class="text-gray-300 mb-4 text-center">
-                            Integrated platform for AI film project crowdfunding, production, and trading. Supports FilmToken issuance and IP digital trading.
-                        </p>
-                        <div class="case-stats">
-                            <div class="stat-item">
-                                <div class="stat-value text-purple-400">500+</div>
-                                <div class="stat-label">Successful Projects</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value text-purple-400">$100M+</div>
-                                <div class="stat-label">Trading Volume</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- 404world Streaming Platform -->
-                    <div class="ecosystem-case">
-                        <div class="case-icon text-green-400">
-                            <i class="fas fa-play-circle"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3 text-center">404world Streaming Platform</h4>
-                        <p class="text-gray-300 mb-4 text-center">
-                            Platform for creating and sharing infinite parallel worlds. Supports AIUGC system, dynamic viewing experiences, and Watch-to-Earn mechanisms.
-                        </p>
-                        <div class="case-stats">
-                            <div class="stat-item">
-                                <div class="stat-value text-green-400">1M+</div>
-                                <div class="stat-label">Active Users</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value text-green-400">50,000+</div>
-                                <div class="stat-label">Content Pieces</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- BeingOS Digital Human Agency -->
-                    <div class="ecosystem-case">
-                        <div class="case-icon text-yellow-400">
-                            <i class="fas fa-user-friends"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3 text-center">BeingOS Digital Human Agency</h4>
-                        <p class="text-gray-300 mb-4 text-center">
-                            AI companion ecosystem system. Provides AI companion creation tools, intelligent training systems, and celebrity digitization services.
-                        </p>
-                        <div class="case-stats">
-                            <div class="stat-item">
-                                <div class="stat-value text-yellow-400">10,000+</div>
-                                <div class="stat-label">AI Companions</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value text-yellow-400">100+</div>
-                                <div class="stat-label">Celebrity Digitalizations</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Global Film Collection Center -->
-                    <div class="ecosystem-case">
-                        <div class="case-icon text-red-400">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h4 class="text-xl font-bold mb-3 text-center">Global Film Collection Center</h4>
-                        <p class="text-gray-300 mb-4 text-center">
-                            Content discovery engine. Becoming the authoritative global institution for discovering, evaluating, and promoting AI-native content.
-                        </p>
-                        <div class="case-stats">
-                            <div class="stat-item">
-                                <div class="stat-value text-red-400">5,000+</div>
-                                <div class="stat-label">Submitted Works</div>
-                            </div>
-                            <div class="stat-item">
-                                <div class="stat-value text-red-400">200+</div>
-                                <div class="stat-label">Partner Organizations</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- More Case Studies -->
-            <div class="grid md:grid-cols-3 gap-8 mb-12">
-                <div class="card p-6">
-                    <div class="text-3xl mb-4 text-pink-400">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">FENGLL Fashion Brand</h4>
-                    <p class="text-sm text-gray-300 mb-4">Virtual brand spokesperson "Miss Feng" IP marketing</p>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-400">Sales Growth</span>
-                            <span class="text-pink-400 font-bold">280%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-400">Marketing ROI</span>
-                            <span class="text-pink-400 font-bold">1:8</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card p-6">
-                    <div class="text-3xl mb-4 text-blue-400">
-                        <i class="fas fa-shopping-cart"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">YueYue Vitality Program</h4>
-                    <p class="text-sm text-gray-300 mb-4">E-commerce platform AI marketing upgrade project</p>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-400">DAU Growth</span>
-                            <span class="text-blue-400 font-bold">150%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-400">GMV Growth</span>
-                            <span class="text-blue-400 font-bold">300%</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card p-6">
-                    <div class="text-3xl mb-4 text-green-400">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <h4 class="text-lg font-bold mb-2">Traditional Manufacturing Transformation</h4>
-                    <p class="text-sm text-gray-300 mb-4">Industrial brand digital marketing world construction</p>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-400">Online Inquiries Growth</span>
-                            <span class="text-green-400 font-bold">400%</span>
-                        </div>
-                        <div class="flex justify-between">
-                            <span class="text-gray-400">Marketing Cost Reduction</span>
-                            <span class="text-green-400 font-bold">60%</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ROI Calculation Display -->
-            <div class="card p-8 max-w-4xl mx-auto">
-                <h3 class="text-2xl font-bold mb-6 text-center">Return on Investment Comparison Analysis</h3>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="text-center">
-                        <h4 class="text-lg font-bold mb-4 text-gray-400">Traditional Marketing Campaign ROI</h4>
-                        <div class="space-y-3">
-                            <div class="text-3xl font-bold text-gray-400">50%-200%</div>
-                            <div class="text-sm text-gray-500">Typical cycle: 3-6 months</div>
-                            <div class="text-sm text-gray-500">Short-term exposure, limited data value</div>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <h4 class="text-lg font-bold mb-4 text-cyan-400">Interactive World System ROI</h4>
-                        <div class="space-y-3">
-                            <div class="text-3xl font-bold text-cyan-400">300%-1000%</div>
-                            <div class="text-sm text-cyan-400">Typical cycle: 3-5 years</div>
-                            <div class="text-sm text-cyan-400">Continuous appreciation, digital asset value</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="mt-8 p-4 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg text-center">
-                    <div class="font-bold">Average LTV Increase: 150%-300% | User Engagement Time: 10-50x higher than traditional content</div>
                 </div>
             </div>
         </div>
@@ -1350,7 +1658,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">Service Pricing System</h2>
                 <p class="text-xl text-gray-300 max-w-4xl mx-auto">
-                    Transparent pricing, value-based billing, a new business model transitioning from project-based to asset-based creation
+                    Transparent pricing, value-based billing, new business model transforming from project-based to asset-based creation
                 </p>
             </div>
 
@@ -1363,7 +1671,7 @@
                         </div>
                         <h3 class="text-2xl font-bold mb-2">Brand World Creation</h3>
                         <p class="text-gray-400">Building exclusive interactive universes for brands</p>
-                        <div class="text-4xl font-bold text-orange-400 mt-4">From $450K</div>
+                        <div class="text-4xl font-bold text-orange-400 mt-4">Starting from $3M</div>
                         <div class="text-sm text-gray-400 mt-2">6-12 months delivery cycle</div>
                     </div>
                     
@@ -1404,7 +1712,7 @@
                         </div>
                         <h3 class="text-2xl font-bold mb-2">IP World Creation</h3>
                         <p class="text-gray-400">Building fan co-creation ecosystems for IPs</p>
-                        <div class="text-4xl font-bold text-purple-400 mt-4">From $75K</div>
+                        <div class="text-4xl font-bold text-purple-400 mt-4">Starting from $1M</div>
                         <div class="text-sm text-gray-400 mt-2">3-6 months delivery cycle</div>
                     </div>
                     
@@ -1444,8 +1752,8 @@
                             <i class="fas fa-robot text-2xl text-white"></i>
                         </div>
                         <h3 class="text-2xl font-bold mb-2">AI Companion Creation</h3>
-                        <p class="text-gray-400">Custom unique personality AI companions</p>
-                        <div class="text-4xl font-bold text-cyan-400 mt-4">From $150K</div>
+                        <p class="text-gray-400">Customizing unique personality AI companions</p>
+                        <div class="text-4xl font-bold text-cyan-400 mt-4">Starting from $1M</div>
                         <div class="text-sm text-gray-400 mt-2">2-4 months delivery cycle</div>
                     </div>
                     
@@ -1466,7 +1774,7 @@
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-400 mr-3"></i>
-                                <span class="text-sm">Multi-modal interaction capabilities</span>
+                                <span class="text-sm">Multimodal interaction capabilities</span>
                             </div>
                             <div class="flex items-center">
                                 <i class="fas fa-check text-green-400 mr-3"></i>
@@ -1479,12 +1787,12 @@
                 </div>
             </div>
 
-            <!-- Complete Solution Package -->
+            <!-- Comprehensive Solution -->
             <div class="max-w-4xl mx-auto">
                 <div class="evolution-card p-8 text-center">
                     <h3 class="text-3xl font-bold mb-6 gradient-text">Complete World Building Solution</h3>
                     <p class="text-xl text-gray-300 mb-8">
-                        Comprehensive solution combining Brand World + IP Ecosystem + AI Companion, with synergistic optimization and pricing advantages
+                        Brand World + IP Ecosystem + AI Companion complete solution with synergistic optimization and pricing advantages
                     </p>
                     <div class="grid md:grid-cols-3 gap-6 mb-8">
                         <div class="text-center">
@@ -1500,8 +1808,8 @@
                             <div class="text-sm text-gray-400">Emotional connection bridge</div>
                         </div>
                     </div>
-                    <div class="text-5xl font-bold gradient-text mb-4">From $750K</div>
-                    <div class="text-lg text-gray-400 mb-6">Save $150K+, 12-18 months delivery</div>
+                    <div class="text-5xl font-bold gradient-text mb-4">Starting from $5M</div>
+                    <div class="text-lg text-gray-400 mb-6">Save $1M+, 12-18 months delivery</div>
                     <button class="btn-infinite px-12 py-4 rounded-full text-xl font-bold">
                         <i class="fas fa-rocket mr-2"></i>Launch Complete Solution
                     </button>
@@ -1516,7 +1824,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-6xl font-bold mb-6 gradient-text">AI-Native Technology Architecture</h2>
                 <p class="text-xl text-gray-300 max-w-4xl mx-auto">
-                    Based on cutting-edge AI technology stack, building sustainably operating intelligent world systems
+                    Based on cutting-edge AI technology stack, building continuously operating intelligent world systems
                 </p>
             </div>
 
@@ -1556,7 +1864,7 @@
                             <div class="space-y-3">
                                 <div class="flex items-center">
                                     <i class="fas fa-heart text-purple-400 mr-3"></i>
-                                    <span>Multi-modal emotion recognition & understanding</span>
+                                    <span>Multimodal emotion recognition & understanding</span>
                                 </div>
                                 <div class="flex items-center">
                                     <i class="fas fa-comments text-purple-400 mr-3"></i>
@@ -1579,7 +1887,7 @@
                             <div class="space-y-3">
                                 <div class="bg-black bg-opacity-30 p-4 rounded-lg">
                                     <div class="font-semibold text-orange-400 mb-1">Neural Radiance Fields (NeRFs)</div>
-                                    <div class="text-sm text-gray-400">Reconstructing ultra-realistic 3D scenes from 2D images</div>
+                                    <div class="text-sm text-gray-400">Reconstruct ultra-realistic 3D scenes from 2D images</div>
                                 </div>
                                 <div class="bg-black bg-opacity-30 p-4 rounded-lg">
                                     <div class="font-semibold text-orange-400 mb-1">3D Gaussian Splatting (3DGS)</div>
@@ -1600,8 +1908,8 @@
                                     <div class="text-xs text-gray-400">LOD auto-adjustment</div>
                                 </div>
                                 <div class="text-center p-3 bg-orange-400 bg-opacity-20 rounded-lg">
-                                    <div class="text-sm font-semibold">Smart Occlusion</div>
-                                    <div class="text-xs text-gray-400">Culling algorithms</div>
+                                    <div class="text-sm font-semibold">Smart Culling</div>
+                                    <div class="text-xs text-gray-400">Occlusion algorithms</div>
                                 </div>
                             </div>
                         </div>
@@ -1609,9 +1917,9 @@
                 </div>
             </div>
 
-            <!-- Cross-Platform Compatibility -->
+            <!-- Cross-platform Compatibility -->
             <div class="card p-8 max-w-4xl mx-auto">
-                <h3 class="text-2xl font-bold mb-6 text-center gradient-text">Unified Cross-Platform Experience</h3>
+                <h3 class="text-2xl font-bold mb-6 text-center gradient-text">Unified Experience Across All Platforms</h3>
                 <div class="grid md:grid-cols-5 gap-6 mb-8">
                     <div class="text-center">
                         <div class="w-16 h-16 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-3">
@@ -1662,7 +1970,7 @@
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-6xl font-bold mb-6">Future Vision: Infinite Possibilities</h2>
                 <p class="text-xl opacity-90 max-w-4xl mx-auto">
-                    We're not helping clients adapt to change, but helping them lead change, co-creating infinite possibilities in the AI era
+                    We are not helping clients adapt to change, but helping them lead change, co-creating infinite possibilities in the AI era
                 </p>
             </div>
 
@@ -1673,16 +1981,16 @@
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Digital Experience Revolution</h3>
                     <p class="opacity-90">
-                        Redefining human-AI relationships: from tool usage to partner collaboration, from information acquisition to emotional connection, from passive acceptance to active creation
+                        Redefining human-computer relationships: from tool usage to partner collaboration, from information acquisition to emotional connection, from passive acceptance to active creation
                     </p>
                 </div>
                 <div class="text-center">
                     <div class="w-24 h-24 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-6">
                         <i class="fas fa-users text-3xl text-white"></i>
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Creation Democratization</h3>
+                    <h3 class="text-2xl font-bold mb-4">Democratization of Creation</h3>
                     <p class="opacity-90">
-                        Enabling everyone to become a creator, lowering barriers to creative expression, building diverse content ecosystems, unleashing human creative potential
+                        Enabling everyone to become a creator, lowering barriers to creative expression, building diverse content ecosystems, and unleashing human creative potential
                     </p>
                 </div>
                 <div class="text-center">
@@ -1691,7 +1999,7 @@
                     </div>
                     <h3 class="text-2xl font-bold mb-4">Social Value Contribution</h3>
                     <p class="opacity-90">
-                        Driving educational transformation, cultural heritage innovation, social connection strengthening, contributing to building a more inclusive, innovative digital society
+                        Driving educational transformation, cultural heritage innovation, strengthening social connections, contributing to building a more inclusive and innovative digital society
                     </p>
                 </div>
             </div>
@@ -1703,7 +2011,7 @@
                     <div class="bg-white bg-opacity-10 p-6 rounded-lg">
                         <h4 class="text-xl font-bold mb-3">To Clients</h4>
                         <p class="opacity-90">
-                            Delivering not just products, but sustainable appreciating digital assets - brand worlds that establish deep emotional connections with users
+                            We deliver not just products, but sustainable value-appreciating digital assets - brand worlds that build deep emotional connections with users
                         </p>
                     </div>
                     <div class="bg-white bg-opacity-10 p-6 rounded-lg">
@@ -1715,13 +2023,13 @@
                     <div class="bg-white bg-opacity-10 p-6 rounded-lg">
                         <h4 class="text-xl font-bold mb-3">To Society</h4>
                         <p class="opacity-90">
-                            Responsibly applying AI technology, promoting cultural heritage innovation, advancing educational accessibility, contributing to humanity's digital civilization process
+                            Responsible application of AI technology, promoting cultural heritage innovation, advancing educational progress, contributing to humanity's digital civilization
                         </p>
                     </div>
                     <div class="bg-white bg-opacity-10 p-6 rounded-lg">
                         <h4 class="text-xl font-bold mb-3">To the Future</h4>
                         <p class="opacity-90">
-                            Continuously exploring optimal models of AI-human collaboration, contributing to building a more inclusive, innovative, sustainable digital society
+                            Continuously exploring optimal models of AI-human collaboration, contributing to building a more inclusive, innovative, and sustainable digital society
                         </p>
                     </div>
                 </div>
@@ -1762,15 +2070,15 @@
                                     <input type="text" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none" required>
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium mb-2">Email Address *</label>
+                                    <label class="block text-sm font-medium mb-2">Email *</label>
                                     <input type="email" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none" required>
                                 </div>
                             </div>
                             
                             <div>
-                                <label class="block text-sm font-medium mb-2">Service of Interest *</label>
+                                <label class="block text-sm font-medium mb-2">Services of Interest *</label>
                                 <select class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none" required>
-                                    <option value="">Select the service you're most interested in...</option>
+                                    <option value="">Select your service of interest...</option>
                                     <option value="brand-world">Brand World Creation System</option>
                                     <option value="ip-world">IP World Creation System</option>
                                     <option value="ai-companion">AI Companion Creation System</option>
@@ -1783,21 +2091,21 @@
                                 <label class="block text-sm font-medium mb-2">Project Budget Range</label>
                                 <select class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none">
                                     <option value="">Please select budget range...</option>
-                                    <option value="75-150">$75K-$150K</option>
-                                    <option value="150-450">$150K-$450K</option>
-                                    <option value="450-750">$450K-$750K</option>
-                                    <option value="750-1500">$750K-$1.5M</option>
-                                    <option value="1500+">$1.5M+</option>
+                                    <option value="500k-1m">$500K - $1M</option>
+                                    <option value="1m-3m">$1M - $3M</option>
+                                    <option value="3m-5m">$3M - $5M</option>
+                                    <option value="5m-10m">$5M - $10M</option>
+                                    <option value="10m+">$10M+</option>
                                 </select>
                             </div>
                             
                             <div>
                                 <label class="block text-sm font-medium mb-2">Project Urgency</label>
                                 <select class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none">
-                                    <option value="">Please select timeline requirements...</option>
-                                    <option value="urgent">Urgent (Start within 1 month)</option>
-                                    <option value="normal">Normal (Start within 2-3 months)</option>
-                                    <option value="planning">Planning (Start within 6 months)</option>
+                                    <option value="">Please select timeline requirement...</option>
+                                    <option value="urgent">Urgent (Launch within 1 month)</option>
+                                    <option value="normal">Normal (Launch within 2-3 months)</option>
+                                    <option value="planning">Planning (Launch within 6 months)</option>
                                     <option value="future">Future consideration (Information only)</option>
                                 </select>
                             </div>
@@ -1805,14 +2113,14 @@
                             <div>
                                 <label class="block text-sm font-medium mb-2">Project Requirements Description *</label>
                                 <textarea rows="4" class="w-full px-4 py-3 bg-gray-800 border border-gray-600 rounded-lg focus:border-cyan-400 focus:outline-none" 
-                                    placeholder="Please describe your brand/IP background, target audience, desired experience effects, and current challenges..." required></textarea>
+                                    placeholder="Please describe your brand/IP background, target users, desired experience effects, and current challenges..." required></textarea>
                             </div>
                             
                             <div class="bg-gray-800 bg-opacity-50 p-4 rounded-lg">
                                 <div class="flex items-start">
                                     <input type="checkbox" id="agree" class="mt-1 mr-3" required>
                                     <label for="agree" class="text-sm text-gray-300">
-                                        I agree to Nengli Limited Company collecting and processing the above information for project consultation purposes, and understand I can withdraw consent at any time. I have read and agree to the
+                                        I agree to Nengli.World collecting and processing the above information for project consultation purposes, and understand I can withdraw consent at any time. I have read and agree to the
                                         <a href="#" class="text-cyan-400 hover:underline">Privacy Policy</a> and
                                         <a href="#" class="text-cyan-400 hover:underline">Terms of Service</a>.
                                     </label>
@@ -1824,7 +2132,7 @@
                             </button>
                             
                             <div class="text-center text-sm text-gray-400">
-                                <p>After submission, our strategic consultants will contact you within 24 hours</p>
+                                <p>After submission, our strategic consultant will contact you within 24 hours</p>
                             </div>
                         </form>
                     </div>
@@ -1836,7 +2144,7 @@
                         <i class="fas fa-envelope text-3xl text-cyan-400 mb-4"></i>
                         <h4 class="font-bold text-lg mb-2">Email</h4>
                         <p class="text-gray-300 mb-2">hello@nengli.world</p>
-                        <p class="text-sm text-gray-400">Professional response within 24 hours</p>
+                        <p class="text-sm text-gray-400">Professional reply within 24 hours</p>
                     </div>
                     
                     <div class="card p-6 text-center">
@@ -1858,7 +2166,7 @@
                     
                     <div class="card p-6 text-center">
                         <i class="fas fa-users text-3xl text-green-400 mb-4"></i>
-                        <h4 class="font-bold text-lg mb-2">Join AI World Builders Community</h4>
+                        <h4 class="font-bold text-lg mb-2">Join AI World Builder Community</h4>
                         <p class="text-gray-300 mb-4">Exchange latest trends with industry pioneers</p>
                         <div class="flex justify-center space-x-3">
                             <a href="#" class="w-10 h-10 bg-blue-500 bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-40 transition">
@@ -1880,7 +2188,7 @@
                     <div class="evolution-card p-6 text-center">
                         <i class="fas fa-phone text-2xl text-yellow-400 mb-3"></i>
                         <h4 class="font-bold mb-2">Emergency Project Hotline</h4>
-                        <p class="text-sm text-gray-300 mb-3">Need to start a project urgently?</p>
+                        <p class="text-sm text-gray-300 mb-3">Need urgent project launch?</p>
                         <button class="btn-primary px-6 py-2 rounded-full text-sm font-bold">
                             <i class="fas fa-bolt mr-1"></i>Emergency Consultation
                         </button>
@@ -1901,12 +2209,11 @@
                             <span class="logo-symbol">∞</span>
                         </div>
                         <div class="logo-text">
-                            <div class="logo-main">Nengli Limited</div>
                             <div class="logo-sub">NENGLI.WORLD</div>
                         </div>
                     </div>
                     <p class="text-gray-400 mb-6 max-w-md">
-                        AI-era brand & IP world builder. Through deep integration of traditional professional knowledge and AI technology, redefining brand-user relationships, evolving from "limited capabilities" to "infinite possibilities".
+                        AI-era brand and IP world builder. Through deep integration of traditional expertise and AI technology, redefining brand-user relationships, evolving from "limited capabilities" to "infinite possibilities."
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-full flex items-center justify-center hover:scale-110 transition">
@@ -1936,14 +2243,14 @@
                     </ul>
                 </div>
                 
-                <!-- Success Cases -->
+                <!-- Project Cases -->
                 <div>
-                    <h4 class="font-bold mb-4 text-purple-400">Success Cases</h4>
+                    <h4 class="font-bold mb-4 text-purple-400">Project Cases</h4>
                     <ul class="space-y-3 text-gray-400">
-                        <li><a href="#cases" class="hover:text-purple-400 transition">Hong Kong AI Int'l Film Festival</a></li>
+                        <li><a href="#cases" class="hover:text-purple-400 transition">Hong Kong AI International Film Festival</a></li>
                         <li><a href="#cases" class="hover:text-purple-400 transition">Knowledge is Power IP</a></li>
-                        <li><a href="#cases" class="hover:text-purple-400 transition">FENGLL Fashion Brand</a></li>
-                        <li><a href="#cases" class="hover:text-purple-400 transition">YueYue Vitality Program</a></li>
+                        <li><a href="#cases" class="hover:text-purple-400 transition">Dunhuang Museum Cultural Creation</a></li>
+                        <li><a href="#cases" class="hover:text-purple-400 transition">Pixel Post Office Series</a></li>
                         <li><a href="#cases" class="hover:text-purple-400 transition">More Cases</a></li>
                     </ul>
                 </div>
@@ -1962,11 +2269,11 @@
                 </div>
             </div>
             
-            <!-- Footer Information -->
+            <!-- Bottom Information -->
             <div class="border-t border-gray-800 pt-8">
                 <div class="grid md:grid-cols-3 gap-6 items-center">
                     <div class="text-gray-400 text-sm">
-                        <p>© 2025 Nengli Limited Company (Nengli.World)</p>
+                        <p>© 2025 Nengli.World</p>
                         <p>All rights reserved</p>
                     </div>
                     
@@ -2182,7 +2489,7 @@
             }
         });
 
-        // Listen for scroll events to add active state to navigation
+        // Monitor scroll events for navigation active state
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('nav a[href^="#"]');
