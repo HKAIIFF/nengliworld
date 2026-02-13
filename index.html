@@ -31,27 +31,30 @@
                 radial-gradient(circle at 90% 80%, rgba(247, 147, 30, 0.15) 0%, transparent 20%),
                 radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.1) 0%, transparent 30%);
             -webkit-font-smoothing: antialiased;
+            word-break: break-word; /* 防止移動端長單詞撐破佈局 */
         }
 
-        /* 移动端优化：防止点击高亮背景 */
+        /* 移動端優化：防止點擊高亮背景及優化點擊延遲 */
         * {
             -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
         }
         
-        /* 进化版Logo设计 */
+        /* 進化版Logo設計 */
         .logo-container {
             position: relative;
             display: flex;
             align-items: center;
             font-family: 'Space Grotesk', sans-serif;
             text-decoration: none;
+            flex-shrink: 0;
         }
         
         .logo-icon {
-            width: 40px;
-            height: 40px;
+            width: 36px;
+            height: 36px;
             position: relative;
-            margin-right: 12px;
+            margin-right: 10px;
             background: linear-gradient(135deg, var(--primary), var(--infinite-purple));
             border-radius: 10px;
             display: flex;
@@ -68,6 +71,7 @@
                 width: 48px;
                 height: 48px;
                 border-radius: 12px;
+                margin-right: 12px;
             }
         }
         
@@ -91,7 +95,7 @@
         }
         
         .logo-symbol {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 900;
             color: #fff;
             text-shadow: 0 0 10px rgba(255,255,255,0.5);
@@ -111,7 +115,7 @@
         }
         
         .logo-main {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             background: linear-gradient(90deg, var(--primary), var(--infinite-purple), var(--infinite-cyan));
             -webkit-background-clip: text;
@@ -119,6 +123,7 @@
             color: transparent;
             letter-spacing: -0.5px;
             margin-bottom: 2px;
+            white-space: nowrap;
         }
         
         @media (min-width: 768px) {
@@ -126,13 +131,17 @@
         }
         
         .logo-sub {
-            font-size: 9px;
+            font-size: 8px;
             font-weight: 600;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: var(--infinite-cyan);
             opacity: 0.9;
             font-family: 'Orbitron', sans-serif;
+        }
+        
+        @media (min-width: 768px) {
+            .logo-sub { font-size: 9px; letter-spacing: 2px; }
         }
         
         @keyframes infiniteGlow {
@@ -239,7 +248,7 @@
             color: white;
         }
         
-        /* 语言切换按钮样式 */
+        /* 語言切換按鈕樣式 */
         .lang-switch-btn {
             background: rgba(255, 255, 255, 0.1);
             border: 1px solid rgba(255, 255, 255, 0.2);
@@ -248,6 +257,7 @@
             font-weight: 700;
             transition: all 0.3s ease;
             cursor: pointer;
+            white-space: nowrap; /* 移動端防止換行 */
         }
         
         .lang-switch-btn:hover {
@@ -458,7 +468,7 @@
             .contact-grid { grid-template-columns: 2fr 1fr; gap: 3rem; }
         }
         
-        /* 案例网格系统 */
+        /* 案例網格系統 - 移動端適配增強 */
         .cases-container {
             display: grid;
             grid-template-columns: 1fr;
@@ -468,7 +478,7 @@
         
         @media (min-width: 768px) {
             .cases-container {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
                 gap: 2rem;
             }
             .major-case { grid-column: span 2; }
@@ -555,13 +565,14 @@
                 height: 100vh;
                 background: rgba(10, 10, 10, 0.98);
                 z-index: 55;
-                padding: 5rem 2rem 2rem;
+                padding: 6rem 2rem 2rem; /* 增加頂部內距防止遮擋 */
                 transform: translateX(100%);
                 transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: center;
+                overflow-y: auto;
             }
             .mobile-menu.active { transform: translateX(0); }
             
@@ -597,7 +608,7 @@
             border-radius: 4px;
         }
         
-        /* 响应式排版调整 */
+        /* 響應式排版深度調整 */
         @media (max-width: 640px) {
             h1 { font-size: 2.25rem !important; }
             h2 { font-size: 1.875rem !important; }
@@ -605,11 +616,11 @@
             .section-padding { padding-top: 3rem; padding-bottom: 3rem; }
             .hero { padding-top: 100px; min-height: auto; padding-bottom: 4rem; }
             .btn-infinite, .btn-primary { width: 100%; justify-content: center; display: flex; align-items: center; }
+            .hero-content .inline-block { display: inline-flex; width: 100%; align-items: center; justify-content: center; text-align: center; }
         }
     </style>
 </head>
 <body>
-    <!-- 浮动粒子背景 -->
     <div class="floating-particles">
         <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
         <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
@@ -622,7 +633,6 @@
         <div class="particle" style="left: 90%; animation-delay: 8s;"></div>
     </div>
 
-    <!-- 导航 -->
     <nav class="navbar fixed w-full z-50 px-4 py-3">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="logo-container">
@@ -635,7 +645,6 @@
                 </div>
             </a>
             
-            <!-- 桌面导航 -->
             <div class="hidden md:flex space-x-6 lg:space-x-8">
                 <a href="#evolution" class="hover:text-cyan-400 transition font-medium text-sm lg:text-base" data-t="nav-evolution">Strategic Evolution</a>
                 <a href="#products" class="hover:text-cyan-400 transition font-medium text-sm lg:text-base" data-t="nav-products">Core Products</a>
@@ -646,19 +655,17 @@
             </div>
             
             <div class="flex items-center space-x-2 md:space-x-4">
-                <button class="lang-switch-btn px-3 py-1 rounded text-xs md:text-sm" id="langToggle">EN / 繁</button>
+                <button class="lang-switch-btn px-3 py-1 rounded text-xs md:text-sm" id="langToggle">繁體中文</button>
                 <a href="#contact" class="btn-infinite px-4 py-2 rounded-full text-xs md:text-sm font-bold hidden sm:inline-block">
                     <i class="fas fa-infinity mr-2"></i><span data-t="btn-explore">Explore Infinite</span>
                 </a>
                 
-                <!-- 移动菜单按钮 -->
                 <button class="mobile-menu-button md:hidden" id="menuToggle" aria-label="Toggle Menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </div>
         
-        <!-- 移动菜单 -->
         <div class="mobile-menu md:hidden" id="mobileMenu">
             <a href="#evolution" class="hover:text-cyan-400 transition block py-3 text-xl font-bold" data-t="nav-evolution">Strategic Evolution</a>
             <a href="#products" class="hover:text-cyan-400 transition block py-3 text-xl font-bold" data-t="nav-products">Core Products</a>
@@ -677,13 +684,12 @@
         </div>
     </nav>
 
-    <!-- 英雄区域 -->
     <section class="hero">
         <div class="container mx-auto px-4 hero-content">
             <div class="max-w-6xl mx-auto text-center">
                 <div class="mb-12">
-                    <div class="inline-block mb-6 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-full text-xs md:text-sm font-bold whitespace-normal">
-                        <i class="fas fa-rocket mr-2"></i><span data-t="hero-tag">From "Limited Ability" to "Infinite Possibilities" Strategic Evolution</span>
+                    <div class="inline-flex mb-6 px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-full text-xs md:text-sm font-bold whitespace-normal">
+                        <i class="fas fa-rocket mr-2 mt-1 md:mt-0"></i><span data-t="hero-tag">From "Limited Ability" to "Infinite Possibilities" Strategic Evolution</span>
                     </div>
                     <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight" data-t="hero-title">
                         Brand & IP World Builder<br>in the AI Era
@@ -696,7 +702,6 @@
                     </p>
                 </div>
                 
-                <!-- 核心价值主张 -->
                 <div class="grid md:grid-cols-3 gap-6 mb-12">
                     <div class="evolution-card p-6 md:p-8 text-center">
                         <div class="text-4xl md:text-5xl mb-4 text-cyan-400">
@@ -724,7 +729,6 @@
                     </div>
                 </div>
 
-                <!-- 核心数据展示 -->
                 <div class="grid grid-cols-2 md:grid-cols-5 gap-3 md:gap-4 mb-12">
                     <div class="bg-black bg-opacity-50 rounded-lg p-3 md:p-4">
                         <div class="text-xl md:text-3xl font-bold text-cyan-400">15+</div>
@@ -748,7 +752,6 @@
                     </div>
                 </div>
 
-                <!-- 行动按钮 -->
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6 justify-center">
                     <a href="#contact" class="btn-infinite px-8 py-4 rounded-full text-lg font-bold">
                         <i class="fas fa-infinity mr-2"></i><span data-t="btn-explore">Explore Infinite</span>
@@ -764,7 +767,6 @@
         </div>
     </section>
 
-    <!-- 战略进化区域 -->
     <section id="evolution" class="py-16 md:py-20 bg-black bg-opacity-30">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 md:mb-16">
@@ -774,7 +776,6 @@
                 </p>
             </div>
 
-            <!-- 进化对比 -->
             <div class="grid lg:grid-cols-2 gap-8 md:gap-12 mb-16">
                 <div class="card p-6 md:p-8">
                     <div class="text-center mb-8">
@@ -833,7 +834,6 @@
                 </div>
             </div>
 
-            <!-- 进化时间线 -->
             <div class="evolution-timeline">
                 <div class="evolution-step">
                     <div class="evolution-content evolution-left">
@@ -870,7 +870,6 @@
         </div>
     </section>
 
-    <!-- 核心产品体系 -->
     <section id="products" class="product-showcase py-16 md:py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 md:mb-16">
@@ -881,7 +880,6 @@
             </div>
 
             <div class="space-y-16 md:space-y-24">
-                <!-- 品牌世界创建系统 -->
                 <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div>
                         <div class="inline-block px-4 py-2 bg-gradient-to-r from-orange-500 to-red-500 rounded-full text-xs md:text-sm font-bold mb-6" data-t="prod-brand-tag">
@@ -969,7 +967,6 @@
                     </div>
                 </div>
 
-                <!-- IP世界创建系统 -->
                 <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div class="card p-6 md:p-8 order-2 lg:order-1">
                         <div class="text-center mb-6">
@@ -1050,7 +1047,6 @@
                     </div>
                 </div>
 
-                <!-- AI伴侣创建系统 -->
                 <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                     <div>
                         <div class="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full text-xs md:text-sm font-bold mb-6" data-t="prod-ai-tag">
@@ -1137,7 +1133,6 @@
         </div>
     </section>
 
-    <!-- 项目案例 -->
     <section id="cases" class="py-16 md:py-20 bg-black bg-opacity-30">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 md:mb-16">
@@ -1147,9 +1142,7 @@
                 </p>
             </div>
 
-            <!-- 旗舰案例 -->
             <div class="cases-container mb-12 md:mb-16">
-                <!-- 香港AI国际电影节 - 主案例 -->
                 <div class="case-study-card major-case">
                     <div class="case-visual bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
                         <div class="text-center text-white p-4">
@@ -1192,7 +1185,6 @@
                     </div>
                 </div>
 
-                <!-- 知识就是力量IP数字升级 -->
                 <div class="case-study-card featured-case">
                     <div class="case-visual bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center">
                         <div class="text-center text-white p-4">
@@ -1227,11 +1219,9 @@
                 </div>
             </div>
 
-            <!-- 核心IP作品案例 -->
             <div class="mb-12 md:mb-16">
                 <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center gradient-text" data-t="core-ip-title">Core IP Works Showcase</h3>
                 <div class="cases-container">
-                    <!-- 银河研究所 -->
                     <div class="case-study-card featured-case">
                         <div class="case-visual bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center">
                             <div class="text-center text-white p-4">
@@ -1265,8 +1255,6 @@
                         </div>
                     </div>
                     
-                    <!-- 脑性漫游指南 & 少年太空漫游指南 (省略重复结构，以保持代码简洁，实际逻辑同上) -->
-                    <!-- 为了完整性，这里保留其他卡片结构，通过JS替换文本 -->
                     <div class="case-study-card featured-case">
                         <div class="case-visual bg-gradient-to-br from-pink-500 to-purple-600 flex items-center justify-center">
                             <div class="text-center text-white p-4">
@@ -1335,17 +1323,14 @@
                 </div>
             </div>
 
-            <!-- 大型活动案例 -->
             <div class="mb-12 md:mb-16">
                 <h3 class="text-2xl md:text-3xl font-bold mb-8 text-center gradient-text" data-t="events-title">Large-scale Events & Competitions</h3>
-                <!-- 为节省空间，此处仅展示关键逻辑，实际代码包含了所有案例卡片，结构同上 -->
                 <div class="card p-8 text-center text-gray-400">
                     <p data-t="more-cases-text">Including "Future World Patch Conference", "China Mascot Design Competition", "World Mascot Carnival", "Dunhuang Museum Digital Art", "Pixel Post Office", "CUBA League", "CIIE Digital Art Exhibition", "Drama 'A Dream Like A Dream'", "FENGLL Fashion", "YueYue Vitality Plan", etc.</p>
                     <button class="mt-4 text-cyan-400 underline" onclick="window.location.href='#contact'" data-t="view-all-cases">Contact us for full portfolio</button>
                 </div>
             </div>
 
-            <!-- ROI计算展示 -->
             <div class="card p-6 md:p-8 max-w-4xl mx-auto">
                 <h3 class="text-xl md:text-2xl font-bold mb-6 text-center" data-t="roi-title">ROI Comparison Analysis</h3>
                 <div class="grid md:grid-cols-2 gap-8">
@@ -1373,7 +1358,6 @@
         </div>
     </section>
 
-    <!-- 定价体系 -->
     <section id="pricing" class="py-16 md:py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 md:mb-16">
@@ -1384,7 +1368,6 @@
             </div>
 
             <div class="grid lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto mb-16">
-                <!-- 品牌世界创建定价 -->
                 <div class="price-card">
                     <div class="text-center mb-8">
                         <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-orange-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1425,7 +1408,6 @@
                     <button class="btn-primary w-full py-3 rounded-lg font-bold" data-t="btn-consult-brand">Consult Brand World</button>
                 </div>
 
-                <!-- IP世界创建定价 -->
                 <div class="price-card">
                     <div class="text-center mb-8">
                         <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1466,7 +1448,6 @@
                     <button class="btn-infinite w-full py-3 rounded-lg font-bold" data-t="btn-consult-ip">Consult IP World</button>
                 </div>
 
-                <!-- AI伴侣创建定价 -->
                 <div class="price-card">
                     <div class="text-center mb-8">
                         <div class="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -1508,7 +1489,6 @@
                 </div>
             </div>
 
-            <!-- 组合方案 -->
             <div class="max-w-4xl mx-auto">
                 <div class="evolution-card p-6 md:p-8 text-center">
                     <h3 class="text-2xl md:text-3xl font-bold mb-6 gradient-text" data-t="bundle-title">Complete World Building Solution</h3>
@@ -1539,7 +1519,6 @@
         </div>
     </section>
 
-    <!-- 联系我们 (简化展示) -->
     <section id="contact" class="py-16 md:py-20">
         <div class="container mx-auto px-4">
             <div class="text-center mb-12 md:mb-16">
@@ -1550,7 +1529,6 @@
             </div>
 
             <div class="contact-grid">
-                <!-- 联系表单 -->
                 <div>
                     <div class="card p-6 md:p-8">
                         <h3 class="text-2xl font-bold mb-6" data-t="form-title">Free Strategic Consultation</h3>
@@ -1577,14 +1555,13 @@
                                     placeholder="..." required></textarea>
                             </div>
                             
-                            <button type="submit" class="btn-infinite w-full py-4 rounded-lg text-lg font-bold">
+                            <button type="submit" class="btn-infinite w-full py-4 rounded-lg text-lg font-bold flex items-center justify-center">
                                 <i class="fas fa-rocket mr-2"></i><span data-t="btn-submit">Get Free Consultation</span>
                             </button>
                         </form>
                     </div>
                 </div>
 
-                <!-- 联系信息 -->
                 <div class="space-y-6">
                     <div class="card p-6 text-center">
                         <i class="fas fa-envelope text-3xl text-cyan-400 mb-4"></i>
@@ -1602,11 +1579,9 @@
         </div>
     </section>
 
-    <!-- 页脚 -->
     <footer class="bg-black py-12 md:py-16">
         <div class="container mx-auto px-4">
             <div class="grid lg:grid-cols-5 gap-8 mb-12">
-                <!-- 公司信息 -->
                 <div class="lg:col-span-2">
                     <div class="logo-container mb-6">
                         <div class="logo-icon">
@@ -1623,7 +1598,6 @@
                 </div>
             </div>
             
-            <!-- 底部信息 -->
             <div class="border-t border-gray-800 pt-8">
                 <div class="grid md:grid-cols-3 gap-6 items-center">
                     <div class="text-gray-400 text-sm text-center md:text-left">
@@ -1649,9 +1623,8 @@
         </div>
     </footer>
 
-    <!-- JavaScript交互 -->
     <script>
-        // 语言数据字典
+        // 語言數據字典
         const translations = {
             "brand-name": { tc: "能力有限公司", en: "Nengli Co., Ltd." },
             "nav-evolution": { tc: "戰略進化", en: "Strategic Evolution" },
@@ -1896,22 +1869,22 @@
             "sys-status": { tc: "全系統運行正常", en: "System Normal" }
         };
 
-        // 当前语言状态
+        // 當前語言狀態 (預設英文)
         let currentLang = 'en';
 
-        // 切换语言函数
+        // 切換語言函數
         function toggleLanguage() {
             currentLang = currentLang === 'en' ? 'tc' : 'en';
             
-            // 更新按钮文本
+            // 更新按鈕文本，提示用戶"點擊切換到目標語言"
             const btn = document.getElementById('langToggle');
-            btn.textContent = currentLang === 'en' ? 'EN / 繁' : '繁 / EN';
+            btn.textContent = currentLang === 'en' ? '繁體中文' : 'English';
             
-            // 更新页面所有带data-t属性的元素
+            // 更新頁面所有帶data-t屬性的元素
             document.querySelectorAll('[data-t]').forEach(el => {
                 const key = el.getAttribute('data-t');
                 if (translations[key] && translations[key][currentLang]) {
-                    // 如果内容包含HTML标签，使用innerHTML
+                    // 如果內容包含HTML標籤，使用innerHTML
                     if (translations[key][currentLang].includes('<')) {
                         el.innerHTML = translations[key][currentLang];
                     } else {
@@ -1920,30 +1893,32 @@
                 }
             });
             
-            // 改变HTML lang属性
+            // 改變HTML lang屬性
             document.documentElement.lang = currentLang === 'en' ? 'en' : 'zh-Hant';
         }
 
-        // 绑定语言切换按钮
+        // 綁定語言切換按鈕
         document.getElementById('langToggle').addEventListener('click', toggleLanguage);
 
-        // 移动菜单切换
+        // 移動菜單切換
         document.getElementById('menuToggle').addEventListener('click', function() {
             const mobileMenu = document.getElementById('mobileMenu');
             mobileMenu.classList.toggle('active');
             
-            // 切换图标
+            // 切換圖標
             const icon = this.querySelector('i');
             if (mobileMenu.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
+                document.body.style.overflow = 'hidden'; // 展開菜單時禁止背景滾動
             } else {
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                document.body.style.overflow = ''; // 恢復滾動
             }
         });
 
-        // 导航链接点击关闭菜单
+        // 導航鏈接點擊關閉菜單
         document.querySelectorAll('.mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 const mobileMenu = document.getElementById('mobileMenu');
@@ -1951,10 +1926,11 @@
                 const icon = document.getElementById('menuToggle').querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+                document.body.style.overflow = '';
             });
         });
 
-        // 导航链接平滑滚动
+        // 導航鏈接平滑滾動
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1968,7 +1944,7 @@
             });
         });
 
-        // 导航栏滚动效果
+        // 導航欄滾動效果
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
             if (window.scrollY > 50) {
@@ -1978,7 +1954,7 @@
             }
         });
 
-        // 滚动动画
+        // 滾動動畫
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1992,13 +1968,13 @@
             });
         }, observerOptions);
 
-        // 观察需要动画的元素
+        // 觀察需要動畫的元素
         document.querySelectorAll('.card, .evolution-card, .case-study-card, .price-card').forEach(element => {
             element.classList.add('fade-in');
             observer.observe(element);
         });
 
-        // 动态粒子创建
+        // 動態粒子創建
         function createParticle() {
             const particle = document.createElement('div');
             particle.className = 'particle';
@@ -2006,13 +1982,13 @@
             particle.style.animationDelay = Math.random() * 8 + 's';
             particle.style.animationDuration = (8 + Math.random() * 4) + 's';
             
-            // 随机颜色
+            // 隨機顏色
             const colors = ['#06b6d4', '#8b5cf6', '#f59e0b', '#ef4444'];
             particle.style.background = colors[Math.floor(Math.random() * colors.length)];
             
             document.querySelector('.floating-particles').appendChild(particle);
             
-            // 动画结束后移除
+            // 動畫結束後移除
             setTimeout(() => {
                 if (particle.parentNode) {
                     particle.remove();
@@ -2020,20 +1996,20 @@
             }, 12000);
         }
 
-        // 定期创建粒子
+        // 定期創建粒子
         setInterval(createParticle, 2000);
 
-        // 页面加载完成后的初始化
+        // 頁面加載完成後的初始化
         document.addEventListener('DOMContentLoaded', function() {
-            // 为所有卡片添加初始动画延迟
+            // 為所有卡片添加初始動畫延遲
             const cards = document.querySelectorAll('.card, .evolution-card, .case-study-card');
             cards.forEach((card, index) => {
-                // 限制最大延迟时间，避免移动端长时间等待
+                // 限制最大延遲時間，避免移動端長時間等待
                 const delay = Math.min((index * 0.1), 1);
                 card.style.animationDelay = delay + 's';
             });
             
-            // 启动Logo动画
+            // 啟動Logo動畫
             const logoIcon = document.querySelector('.logo-icon');
             if (logoIcon) {
                 setInterval(() => {
@@ -2045,7 +2021,7 @@
             }
         });
 
-        // 监听滚动事件，为导航添加活跃状态
+        // 監聽滾動事件，為導航添加活躍狀態
         window.addEventListener('scroll', function() {
             const sections = document.querySelectorAll('section[id]');
             const navLinks = document.querySelectorAll('nav a[href^="#"]');
